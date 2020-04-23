@@ -9,7 +9,7 @@
 </head>
 <body style = "text-align: center;">
 	<jsp:useBean id="p" class="estoque.loja.Estoque" scope="page"/>
-	<jsp:useBean id="lst" class="estoque.loja.Listar" scope="page"/>
+	<jsp:useBean id="lst" class="estoque.loja.ProdutoDao" scope="page"/>
 	
 	<jsp:setProperty property="*" name="p"/>
 	

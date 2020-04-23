@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="estoque.loja.*" %>
-<%! Listar lista = new Listar(); %>
+<%! ProdutoDao lista = new ProdutoDao(); %>
     
 <!DOCTYPE html>
 <html>
@@ -24,6 +24,7 @@
 		<th>Total preço de venda</th>
 		<th>Preço de custo</th>
 		<th>Total preço de custo</th>
+		<th>Excluir</th>
 		
 		<%
 			for (Estoque e: lista.listar()){
@@ -36,6 +37,7 @@
 				<td><%= e.getTotPrecoVenda() %></td>
 				<td><%= e.getPrecoCusto() %></td>
 				<td><%= e.getTotPrecoCusto() %></td>
+				<td><a href="excluir.jsp?idproduto=<%= e.getIdproduto() %>">Excluir</a></td>
 			</tr>
 		<%
 			}

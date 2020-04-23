@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
  <%@ page import="estoque.loja.*" %>
  
- <%! Listar lista = new Listar(); %>
+ <%! ProdutoDao lista = new ProdutoDao(); %>
 <!DOCTYPE html>
 <html>
 <head>

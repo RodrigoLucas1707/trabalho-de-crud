@@ -1,14 +1,22 @@
 package estoque.loja;
 
 public class Estoque {
+	private int idproduto;
 	private String descricao;
 	private String marca;
 	private double precoCusto;
 	private double precoVenda;
-	private int saldo;
+	private double saldo;
 	private double totPrecoCusto;
 	private double totPrecoVenda;
 	
+	
+	public int getIdproduto() {
+		return idproduto;
+	}
+	public void setIdproduto(int idproduto) {
+		this.idproduto = idproduto;
+	}
 	public String getDescricao() {
 		return descricao;
 	}
@@ -33,10 +41,10 @@ public class Estoque {
 	public void setPrecoVenda(double precoVenda) {
 		this.precoVenda = precoVenda;
 	}
-	public int getSaldo() {
+	public double getSaldo() {
 		return saldo;
 	}
-	public void setSaldo(int saldo) {
+	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 	public double getTotPrecoCusto() {
