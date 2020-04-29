@@ -13,7 +13,7 @@
 	
 	<jsp:setProperty property="*" name="p"/>
 	
-	${lst.inserir(p)}
+	${lst.inserirOuAlterar(p)}
 	
 	Registro salvo com sucesso!<br/>
 	<a href="index.jsp">voltar</a>	

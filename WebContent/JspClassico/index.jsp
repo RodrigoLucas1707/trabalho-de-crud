@@ -14,7 +14,7 @@
 	<h1 style = "font-family: Baskerville;">Mercadinho</h1>
 	<img alt="foto" src="jspclassico.png" style="width:30%">
 	<br>
-	<a href="cadastro.jsp" class="btn btn-dark" style="padding:16px; margin:4px; font-size:12pt">Cadastro</a>
+	<a href="cadastro.jsp?idproduto=0" class="btn btn-dark" style="padding:16px; margin:4px; font-size:12pt">Cadastro</a>
 	<br><br>
 	<table border="1" class="table table-striped table-dark">
 		<th>Descrição</th>
@@ -24,6 +24,7 @@
 		<th>Total preço de venda</th>
 		<th>Preço de custo</th>
 		<th>Total preço de custo</th>
+		<th>Alterar</th>
 		<th>Excluir</th>
 		
 		<%
@@ -37,6 +38,7 @@
 				<td><%= e.getTotPrecoVenda() %></td>
 				<td><%= e.getPrecoCusto() %></td>
 				<td><%= e.getTotPrecoCusto() %></td>
+				<td><a href="cadastro.jsp?idproduto=<%= e.getIdproduto() %>">Alterar</a></td>
 				<td><a href="excluir.jsp?idproduto=<%= e.getIdproduto() %>">Excluir</a></td>
 			</tr>
 		<%

@@ -10,7 +10,10 @@ public class Estoque {
 	private double totPrecoCusto;
 	private double totPrecoVenda;
 	
-	
+//	public Estoque() {
+//		this.idproduto = 0;
+//	}
+//	
 	public int getIdproduto() {
 		return idproduto;
 	}

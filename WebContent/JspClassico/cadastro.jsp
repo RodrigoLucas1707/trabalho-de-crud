@@ -1,3 +1,5 @@
+<%@page import="estoque.loja.Estoque"%>
+<%@page import="estoque.loja.ProdutoDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,18 +10,27 @@
 <title>Insert title here</title>
 </head>
 <body style = "text-align: center;">
+
+	<%
+		ProdutoDao pdao = new ProdutoDao();
+		Estoque e = new Estoque();
+		e.setIdproduto(Integer.parseInt(request.getParameter("idproduto")));
+		e = pdao.consultar(e.getIdproduto());
+	%>
+
 	<h1 style = "font-family: Baskerville;">Novo produto</h1>
 	<form action="gravar.jsp">
+	  <input type="hidden" name = "idproduto" value="<%= e.getIdproduto()%>"/>
 	  <label for="descricao">Descrição:</label><br>
-	  <input type="text" id="descricao" name="descricao" value=""><br>
+	  <input type="text" id="descricao" name="descricao" value="<%= e.getDescricao()%>"><br>
 	  <label for="marca">Marca:</label><br>
-	  <input type="text" id="marca" name="marca" value=""><br>
+	  <input type="text" id="marca" name="marca" value="<%= e.getMarca()%>"><br>
 	  <label for="estoque">Estoque:</label><br>
-	  <input type="text" id="estoque" name="estoque" value=""><br>
+	  <input type="text" id="estoque" name="estoque" value="<%= e.getSaldo()%>"><br>
 	  <label for="pcusto">Preço de custo:</label><br>
-	  <input type="text" id="pcusto" name="pcusto" value=""><br>
+	  <input type="text" id="pcusto" name="pcusto" value="<%= e.getPrecoCusto()%>"><br>
 	  <label for="pvenda">Preço de venda:</label><br>
-	  <input type="text" id="pvenda" name="pvenda" value=""><br><br>
+	  <input type="text" id="pvenda" name="pvenda" value="<%= e.getPrecoVenda()%>"><br><br>
 	  <button type="submit" class="btn btn-success">Cadastrar</button>
 	</form> 
 	<a href="index.jsp" class="badge badge-danger" style="padding:14px; margin:4px; font-size:12pt">Cancelar</a>

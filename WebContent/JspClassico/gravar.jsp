@@ -13,17 +13,18 @@
 <body style = "text-align: center;">
 	<% 
 		Estoque e = new Estoque();
+		e.setIdproduto(Integer.parseInt(request.getParameter("idproduto")));
 		e.setDescricao(request.getParameter("descricao"));
 		e.setMarca(request.getParameter("marca"));
-		e.setSaldo(Integer.valueOf(request.getParameter("estoque")));
-		e.setPrecoCusto(Double.valueOf(request.getParameter("pcusto")));
-		e.setPrecoVenda(Double.valueOf(request.getParameter("pvenda")));
-		lista.inserir(e);
+		e.setSaldo(Double.parseDouble(request.getParameter("estoque")));
+		e.setPrecoCusto(Double.parseDouble(request.getParameter("pcusto")));
+		e.setPrecoVenda(Double.parseDouble(request.getParameter("pvenda")));
+		lista.inserirOuAlterar(e);
 	%>
 	Dados inseridos com sucesso!
 	<br>
 	
-	<a href="cadastro.jsp" class="btn btn-dark" style="padding:14px; margin:4px; font-size:12pt">Novo cadastro</a>
+	<a href="cadastro.jsp?idproduto=0" class="btn btn-dark" style="padding:14px; margin:4px; font-size:12pt">Novo cadastro</a>
 	<a href="index.jsp" class="btn btn-dark" style="padding:14px; margin:4px; font-size:12pt">Voltar ao menu</a>
 	
 </body>

@@ -8,18 +8,25 @@
 <title>Insert title here</title>
 </head>
 <body style = "text-align: center;">
+	<jsp:useBean id="e" class="estoque.loja.Estoque" scope="page"/>
+	<jsp:useBean id="pdao" class="estoque.loja.ProdutoDao" scope="page"/>
+	
+	<jsp:setProperty property="*" name="e"/>
+	${e=pdao.consultar(e.getIdproduto())}
+
 	<h1 style = "font-family: Baskerville;">Novo produto</h1>
 	<form action="gravar.jsp">
+	  <input type="hidden" name="idproduto" value="${e.idproduto}"/>
 	  <label for="descricao">Descrição:</label><br>
-	  <input type="text" id="descricao" name="descricao" value=""><br>
+	  <input type="text" id="descricao" name="descricao" value="${e.descricao}"><br>
 	  <label for="marca">Marca:</label><br>
-	  <input type="text" id="marca" name="marca" value=""><br>
+	  <input type="text" id="marca" name="marca" value="${e.marca}"><br>
 	  <label for="estoque">Estoque:</label><br>
-	  <input type="text" id="estoque" name="saldo" value=""><br>
+	  <input type="text" id="estoque" name="saldo" value="${e.saldo}"><br>
 	  <label for="pcusto">Preço de custo:</label><br>
-	  <input type="text" id="pcusto" name="precoCusto" value=""><br>
+	  <input type="text" id="pcusto" name="precoCusto" value="${e.precoCusto}"><br>
 	  <label for="pvenda">Preço de venda:</label><br>
-	  <input type="text" id="pvenda" name="precoVenda" value=""><br><br>
+	  <input type="text" id="pvenda" name="precoVenda" value="${e.precoVenda}"><br><br>
 	  <button type="submit" class="btn btn-success">Cadastrar</button>
 	</form> 
 	<a href="index.jsp" class="badge badge-danger">Cancelar</a>
